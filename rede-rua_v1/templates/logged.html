@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="text-align:center">
+        <br>
+        <h1>Olá, {{ current_user.nome }}!</h1>
+    <br>
+    <br>
+    <br>
+    <img src="/static/sonic_dance.gif">
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="{{ url_for('edicao') }}"><input type="button" class="btn btn-default" value="Editar dados cadastrais"></a>
+    <br>
+    <a href="{{ url_for('logout') }}"><input type="button" class="btn btn-default" value="Logout"></a>
+    <a href="{{ url_for('lista') }}"><input type="button" class="btn btn-default" value="Lista de Usuários"></a>
+</div>
+{% endblock %}
