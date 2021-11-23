@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <title>Cadastro&Login</title>
+</head>
+<body>
+<div style="text-align:center">
+<h1>Lista de Usuários</h1>
+<div class="container" style="text-align:center">
+        <hr>
+        <table>
+            <tr>
+                <th style="padding:5px">ID</th>
+                <th style="padding:5px">Nome</th>
+                <th style="padding:5px">Email</th>
+                <th style="padding:5px">CPF</th>
+                <th style="padding:5px">Pis</th>
+                <th style="padding:5px">Pais</th>
+                <th style="padding:5px">Estado</th>
+                <th style="padding:5px">Municipio</th>
+                <th style="padding:5px">Cep</th>
+                <th style="padding:5px">Rua</th>
+                <th style="padding:5px">Numero</th>
+                <th style="padding:5px">Complemento</th>
+            </tr>
+            <br>
+            {% for usuario in usuarios %}
+            <tr>
+                <td style="padding:5px">{{ usuario.id }}</td>
+                <td style="padding:5px">{{ usuario.nome }}</td>
+                <td style="padding:5px">{{ usuario.email }}</td>
+                <td style="padding:5px">{{ usuario.cpf }}</td>
+                <td style="padding:5px">{{ usuario.pis }}</td>
+                <td style="padding:5px">{{ usuario.pais }}</td>
+                <td style="padding:5px">{{ usuario.estado }}</td>
+                <td style="padding:5px">{{ usuario.municipio }}</td>
+                <td style="padding:5px">{{ usuario.cep }}</td>
+                <td style="padding:5px">{{ usuario.rua }}</td>
+                <td style="padding:5px">{{ usuario.numero }}</td>
+                <td style="padding:5px">{{ usuario.complemento }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+        <br>
+        <a href="{{ url_for('logado') }}"><input type="button" class="btn btn-default" value="Voltar"></a>
+    </div>
+    </div>
+</body>
+</html>
